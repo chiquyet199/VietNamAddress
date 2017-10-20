@@ -9,4 +9,7 @@ browse to localhost:3000. If there is any problem you can update nodejs version,
 
 
 ## Publish (required login info)
+>$ git add .
+>$ git commit -am "make it better"
+>$ git push heroku master
 >$ heroku git:remote -a vietnam-address
