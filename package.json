@@ -9,7 +9,6 @@
   "repository": "git@github.com:chiquyet199/VietNamAddress.git",
   "scripts": {
     "test": "webpack-dev-server",
-    "postinstall": "webpack",
     "start": "node server.js"
   },
   "author": "chiquyet",
