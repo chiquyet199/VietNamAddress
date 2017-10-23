@@ -1,5 +1,4 @@
-import _ from 'lodash';
-import { addNewAddress } from '../services/address.service';
+import addressService from '../services/address.service';
 
 let initialState = {};
 
@@ -13,11 +12,11 @@ const addresses = (state = initialState, action) => {
 const addressActionHandlers = {};
 
 addressActionHandlers['FETCH_ADDRESSES'] = (state, payload) => {
-    return _.mapKeys(payload, 'id');
+    return addressService.extractData(payload);
 };
 
 addressActionHandlers['ADD_ADDRESS'] = (state, payload) => {
-    addNewAddress(payload);
+    addressService.addNewAddress(payload);
     return state;
 };
 

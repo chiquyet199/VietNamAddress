@@ -1,39 +1,33 @@
-import helper from './helper';
+/**
+ * This is like an interface for all external service follow.
+ * We can easily change the way store data or use any rest api by change the import here.
+ */
+import service from '../firebase/firebase.service';
 
-let data = [
-    {
-        id: 1,
-        street: 'Lam Van Ben',
-        ward: '1',
-        district: '7',
-        city: 'HCM'
-    },
-    {
-        id: 2,
-        street: 'SDS Van Ben',
-        ward: '3',
-        district: '7',
-        city: 'HDS'
-    }
-];
-
+/**
+ * Return a promise contain all addresses from server/database
+ */
 const getAllAddresses = () => {
-    return data;
+    return service.getAllAddresses();
 }
 
-const addNewAddress = (payload) => {
-    var newAddress = payload.address;
-    newAddress.id = helper.newId();
-    data.push(newAddress);
-    payload.callback && payload.callback();
+/**
+ * Post a request to server/database for add new address
+ */
+const addNewAddress = () => {
+    //var newAddress = payload.address;
+    //payload.callback && payload.callback();
 };
 
-const removeAddress = () => {
-
+/**
+ * Extract data from promise.
+ */
+const extractData = (payload) => {
+    return service.extractData(payload);
 }
 
 module.exports = {
     getAllAddresses: getAllAddresses,
     addNewAddress: addNewAddress,
-    removeAddress: removeAddress
+    extractData: extractData
 }

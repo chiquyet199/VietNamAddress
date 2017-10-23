@@ -11,9 +11,8 @@ const config = {
     storageBucket: "",
     messagingSenderId: "704749189837"
 };
-const database = firebase.database();
-const initializeFirebase = () => {
-    firebase.initializeApp(config);
-}
 
-module.exports = {database, initializeFirebase}
+firebase.initializeApp(config);
+const database = firebase.database();
+
+module.exports = { database }

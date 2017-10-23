@@ -10,18 +10,41 @@ class AddressList extends Component {
     }
 
     renderList() {
+        if(_.isEmpty(this.props.addresses)){
+            return (
+                <tr><td className="loading" colSpan="5">loading....</td></tr>
+            );
+        }
+
         return _.map(this.props.addresses,(address) => {
             return (
-                <li key={address.id}>{address.street}</li>
+                <tr key={address.id}>
+                    <td>{address.street}</td>
+                    <td>{address.ward}</td>
+                    <td>{address.district}</td>
+                    <td>{address.city}</td>
+                    <td>{address.country}</td>
+                </tr>
             );
         });
     }
 
     render() {
         return (
-            <ul>
+            <table className="table">
+            <thead>
+              <tr>
+                <th scope="col">Street</th>
+                <th scope="col">Ward</th>
+                <th scope="col">District</th>
+                <th scope="col">City</th>
+                <th scope="col">Country</th>
+              </tr>
+            </thead>
+            <tbody>
                 {this.renderList()}
-            </ul>
+            </tbody>
+          </table>
         );
     }
 }
