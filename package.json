@@ -27,10 +27,10 @@
     "babel-loader": "^6.2.0",
     "babel-preset-es2015": "^6.1.18",
     "babel-preset-react": "^6.1.18",
-    "webpack": "^1.12.9",
     "webpack-dev-server": "^1.14.0"
   },
   "dependencies": {
+    "webpack": "^1.12.9",
     "express": "^4.16.2",
     "firebase": "^4.6.0",
     "install": "^0.10.1",
