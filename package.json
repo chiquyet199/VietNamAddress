@@ -1,6 +1,9 @@
 {
   "name": "vietnam-address",
   "version": "1.0.0",
+  "engines": {
+    "node": "8.7.0"
+  },
   "description": "simple application using ReactJS with babel support",
   "main": "index.js",
   "repository": "git@github.com:chiquyet199/VietNamAddress.git",
