@@ -3,6 +3,7 @@
  * We can easily change the way store data or use any rest api by change the import here.
  */
 import service from '../firebase/firebase.service';
+import helper from './helper';
 
 /**
  * Return a promise contain all addresses from server/database
@@ -14,9 +15,9 @@ const getAllAddresses = () => {
 /**
  * Post a request to server/database for add new address
  */
-const addNewAddress = () => {
-    //var newAddress = payload.address;
-    //payload.callback && payload.callback();
+const addNewAddress = (payload) => {
+    payload.address.id = helper.newId();
+    service.addNewAddress(payload)
 };
 
 /**
